@@ -21,20 +21,21 @@ def change_res(width, height):
 
 
 def rescale_frame(frame, percent=75):
-    scale_percent = 75
+    scale_percent = percent
     width = int(frame.shape[1] * scale_percent / 100)
     height = int(frame.shape[0] * scale_percent / 100)
     dim = (width, height)
     return cv2.resize(frame, dim, interpolation =cv2.INTER_AREA)
 
-make_720p()
+
 while(True):
     # Capture frame-by-frame
     ret, frame = cap.read()
     frame = rescale_frame(frame, percent=100)
     # Display the resulting frame
     cv2.imshow('frame',frame)
-    frame2 = rescale_frame(frame, percent=100)
+    ret, frame = cap.read()
+    frame2 = rescale_frame(frame, percent=50)
     cv2.imshow('frame2',frame2)
     if cv2.waitKey(20) & 0xFF == ord('q'):
         break
