@@ -3,7 +3,7 @@
 This is an repository which I am using to track my progress in my exploration of the library OpenCV for Python.
 
 To install OpenCV for Python on your machine, follow these steps:
-######1. Install Python:
+###### 1. Install Python:
 ##### Windows (from Windows Terminal)
 ```
 winget install python
@@ -24,12 +24,12 @@ sudo pacman -Sy python3
 ```
 
 
-######2. Then, run 'pip' to install OpenCV and Numpy
+###### 2. Then, run 'pip' to install OpenCV and Numpy
 ```
 pip install opencv-python numpy
 ```
 
-######3. OpenCV should now be installed on your machine. Keep in mind that some parts of the code might not work in Linux and Mac because I am currently developing these scripts only on Windows 11.
+###### 3. OpenCV should now be installed on your machine. Keep in mind that some parts of the code might not work in Linux and Mac because I am currently developing these scripts only on Windows 11.
 
 
 ### What is OpenCV?
