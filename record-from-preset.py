@@ -1,4 +1,5 @@
-#Thank you @Rotem for this code, which allows you to test your script even if you don't have a camera
+# Thank you @Rotem for this code, which allows you to test your script even if you don't have a camera.
+# I am responsible for the feature of changing default location for output files.
 # https://stackoverflow.com/questions/60744825/python-3-opencv-unable-to-record-and-save-video
 
 import numpy as np

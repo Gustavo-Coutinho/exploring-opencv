@@ -1,8 +1,11 @@
+# Thank you Justin Mitchel for this code which simplifies recording of video in comparison to the OpenCV documentation.
+# I am responsible for a few improvements and comments, such as setting a default location for saving files.
+# guide from Mitchel is found here: https://www.codingforentrepreneurs.com/blog/how-to-record-video-in-opencv-python/
 import numpy as np
 import os
 import cv2
-
-
+# set a default location to save outputs inside
+default_location = './resulting-media/'
 filename = 'recording-result.mp4'
 frames_per_second = 30
 res = '720p'
@@ -33,10 +36,11 @@ def get_dims(cap, res='1080p'):
     return width, height
 
 # Video Encoding, might require additional installs
-# Types of Codes: http://www.fourcc.org/codecs.php
+# Types of Codecs: http://www.fourcc.org/codecs.php
 VIDEO_TYPE = {
     'avi': cv2.VideoWriter_fourcc(*'XVID'),
-    #'mp4': cv2.VideoWriter_fourcc(*'H264'),
+    # try this if the code below gives you problems:
+    ## 'mp4': cv2.VideoWriter_fourcc(*'H264'),
     'mp4': cv2.VideoWriter_fourcc(*'XVID'),
 }
 
@@ -49,7 +53,7 @@ def get_video_type(filename):
 
 
 cap = cv2.VideoCapture(0)
-out = cv2.VideoWriter(filename, get_video_type(filename), frames_per_second, get_dims(cap, res))
+out = cv2.VideoWriter(default_location+filename, get_video_type(filename), frames_per_second, get_dims(cap, res))
 
 while True:
     ret, frame = cap.read()
