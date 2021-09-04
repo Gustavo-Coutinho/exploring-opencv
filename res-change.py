@@ -26,8 +26,6 @@ def rescale_frame(frame, percent=75):
     height = int(frame.shape[0] * scale_percent / 100)
     dim = (width, height)
     return cv2.resize(frame, dim, interpolation =cv2.INTER_AREA)
-
-
 while(True):
     # Capture frame-by-frame
     ret, frame = cap.read()
@@ -35,7 +33,7 @@ while(True):
     # Display the resulting frame
     cv2.imshow('frame',frame)
     ret, frame = cap.read()
-    frame2 = rescale_frame(frame, percent=50)
+    frame2 = rescale_frame(frame, percent=125)
     cv2.imshow('frame2',frame2)
     if cv2.waitKey(20) & 0xFF == ord('q'):
         break
